@@ -78,3 +78,5 @@ DB_HOST=mysql
 REDIS_HOST=redis
 QUEUE_HOST=beanstalkd
 ```
+
+Vai ser necessário gerar keys e também criar o banco de dados no Mysql! Recomendo utilizar a porta do phpmyadmin
