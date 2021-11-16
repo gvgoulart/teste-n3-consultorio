@@ -28,13 +28,27 @@
                     <label for="exampleInputPassword1">Doença</label>
                     <input type="text" class="form-control"  name="sickness" placeholder="Qual doença do paciente">
                 </div>
-                <div class="form-check">
+                <div class="form-group">
                     <input type="date" name="date">
                     <label class="form-check-label">Quando será realizada a consulta</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>
+            @if(session('msg'))
+                <div class="alert alert-success" role="alert">
+                    {{session('msg')}}
+                </div>
+            @endif
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         </div>
     </div>
 </x-app-layout>

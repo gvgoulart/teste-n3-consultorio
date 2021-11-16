@@ -18,7 +18,7 @@ class PacientController extends Controller
             if(Pacients::find($id)) {
                 Pacients::find($id)->delete();
 
-                return  response([ 'message' => 'Paciente excluído com sucesso'], 200);
+                return redirect()->back()->with('msg', 'Paciente excluído com sucesso');
             } else {
                 return response(['message' => 'Paciente não encontrado'], 404);
             }
@@ -53,12 +53,17 @@ class PacientController extends Controller
             'cpf' => $request->cpf
         ]);
 
-        return response([ 'pacient' => $pacient, 'message' => 'Paciente criado com sucesso'], 200);
+        return redirect()->back()->with('msg', 'Paciente criado com sucesso!');
     }
     public function editForm($id) {
         $pacient = Pacients::findOrFail($id);
+        if($pacient){
+            return view('pacients/edit', ['pacient' => $pacient]);
+        } else {
+            $pacient = '';
+            return view('pacients/edit', ['pacient' => $pacient]);
+        }
 
-        return view('pacients/edit', ['pacient' => $pacient]);
     }
 
     public function edit(Request $request, $id){
@@ -87,7 +92,7 @@ class PacientController extends Controller
             $pacient = Pacients::find($id);
 
             $pacient->save();
-            return  response([ 'message' => 'Paciente editado com sucesso'], 200);
+            return redirect()->back()->with('msg', 'Paciente editado com sucesso!');
         } else {
             return response(['message' => 'Você não tem permissão para atualizar um paciente!'], 400);
         }

@@ -19,9 +19,9 @@ class ConsultController extends Controller
             if(Consult::find($id)) {
                 Consult::find($id)->delete();
 
-                return  response([ 'message' => 'Consulta excluída com sucesso'], 200);
+                return redirect()->back()->with('msg', 'Consulta excluida com sucesso!');
             } else {
-                return response(['message' => 'Consulta não encontrada'], 404);
+                return redirect()->back()->with('error', 'Nenhuma consulta');
             }
         } else {
             return response(['message' => 'Você não tem permissão para deletar uma consulta!'], 404);
@@ -57,7 +57,8 @@ class ConsultController extends Controller
                 'date' => $request->date
             ]);
             
-            return response([ 'consult' => $consult, 'message' => 'Consulta criada com sucesso'], 200);
+            return redirect()->back()->with('msg', 'Consulta criada com sucesso!');
+
         }
     }
     public function editForm($id) {
@@ -72,7 +73,6 @@ class ConsultController extends Controller
     public function edit(Request $request, $id) {
         if(User::find(Auth::user()->id)){
             $data = $request->all();
-            dd($data['date']);
 
             $validator = Validator::make($data, [
                 'reason' => 'required|string|max:255',
@@ -96,9 +96,9 @@ class ConsultController extends Controller
             $consult = Consult::find($id);
 
             $consult->save();
-            return  response([ 'message' => 'Consulta editada com sucesso'], 200);
+            return redirect()->back()->with('msg', 'Consulta editada com sucesso!');
         } else {
-            return response(['message' => 'Você não tem permissão para atualizar uma consulta!'], 400);
+            return redirect()->back()->with('error', 'Algo deu errado no formulário!');
         }
     }
 }
