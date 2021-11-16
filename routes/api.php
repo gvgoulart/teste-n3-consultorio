@@ -27,6 +27,8 @@ Route::post('login', [LoginController::class, 'login']);
 
 Route::middleware(['auth:api'])->group(function () {
 
+    Route::post('logout', [LoginController::class, 'logout']);
+
     //Lista usarioS
     Route::get('user', [UserController::class, 'getAll']);
 
