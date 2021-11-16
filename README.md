@@ -75,6 +75,8 @@ Altere o .env do projeto para
 
 ```
 DB_HOST=mysql
+USER MYSQL=root
+PASSWORD MYSQL=root
 REDIS_HOST=redis
 QUEUE_HOST=beanstalkd
 ```
