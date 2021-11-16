@@ -14,6 +14,11 @@ Após a clonagem do repositório, fazer a instalação do composer na raíz do p
 ```
 composer install
 ```
+
+Rodar
+```
+npm install && npm run dev
+```
 Fazer a configuração do arquivo .env copiando o arquivo .env.example:
 ```
 cp .env.example .env
