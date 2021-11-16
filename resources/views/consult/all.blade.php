@@ -20,8 +20,6 @@
                         <th scope="col">Doença</th>
                         <th scope="col">Data</th>
                         <th scope="col">Hora</th>
-                        <th></th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,21 +32,6 @@
                     <td>{{$consult->sickness}}</td>
                     <td>{{$consult->date}}</td>
                     <td>{{$consult->hour}}</td>
-                    <td>
-                        <a
-                            type="button"
-                            class="btn btn-danger"
-                            href="{{ route('consult_delete', ['id' => $consult->id]) }}">
-                            Deletar
-                        </a>
-                    </td>
-                    <td>
-                        <a
-                            type="button"
-                            class="btn btn-info"
-                            href="{{ route('consult_edit_form', ['id' => $consult->id]) }}">Editar
-                        </a>
-                    </td>
                     @endforeach
                 </tr>
                 </tbody>

@@ -10,6 +10,11 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            @if(isset($consults) && count($consults) == 0)
+                    <div>
+                        <h1>Não há nenhuma consulta!</h1>
+                    </div>
+                @endif
             <table class="table">
                 <thead>
                     <tr>
