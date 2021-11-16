@@ -26,7 +26,7 @@ Após a criação das tabelas, executar as seeds para teste:
 ```
 php artisan db:seed
 ```
-Após o db:seed, 3 contas são criadas admin@gmail.com,professor@gmail.com e aluno@gmail.com, todas elas com senha do 1 ao 8
+
 
 Para geração das chaves de uso do passport:
 ```
