@@ -88,7 +88,8 @@ class DatabaseSeeder extends Seeder
             'pacient_id' => '1',
             'reason' => 'motivo teste 1',
             'sickness' => 'doença teste 1',
-            'date' => '2021-09-30'
+            'date' => '2021-09-30',
+            'hour' => '20:00:00'
 ,        ]);
 
         DB::table('consults')->insert([
@@ -97,6 +98,7 @@ class DatabaseSeeder extends Seeder
             'reason' => 'motivo teste 2',
             'sickness' => 'doença teste 2',
             'date' => '2021-10-12',
+            'hour' => '19:00:00'
         ]);
     }
 }

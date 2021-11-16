@@ -18,6 +18,7 @@
                         <th scope="col">Motivo</th>
                         <th scope="col">Doença</th>
                         <th scope="col">Data</th>
+                        <th scope="col">Hora</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -30,6 +31,7 @@
                     <td>{{$consult->reason}}</td>
                     <td>{{$consult->sickness}}</td>
                     <td>{{$consult->date}}</td>
+                    <td>{{$consult->hour}}</td>
                     <td>
                         <a
                             type="button"

@@ -19,9 +19,16 @@
                     <label for="exampleInputPassword1">Doença</label>
                     <input type="text" value="{{$data['consult']->sickness}}" class="form-control"  name="sickness" placeholder="Qual doença do paciente" required>
                 </div>
-                <div class="form-check">
+                <div class="form-group">
                     <input type="date" name="date" value="{{$data['date']}}" required>
                     <label class="form-check-label" >A consulta está agendada para {{$data['date']}}</label>
+                </div>
+                <div class="form-group">
+                    <input type="time" name="hour" value="{{$data['consult']->hour}}" required>
+                    <label
+                        class="form-check-label" >
+                        A consulta está agendada para {{$data['consult']->hour}}
+                    </label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

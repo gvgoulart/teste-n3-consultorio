@@ -32,6 +32,10 @@
                     <input type="date" name="date">
                     <label class="form-check-label">Quando será realizada a consulta</label>
                 </div>
+                <div class="form-group">
+                    <input type="time" name="hour">
+                    <label class="form-check-label">Qual horário da consulta</label>
+                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>

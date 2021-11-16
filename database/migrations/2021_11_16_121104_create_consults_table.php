@@ -19,7 +19,8 @@ class CreateConsultsTable extends Migration
             $table->unsignedBigInteger('pacient_id');
             $table->text('reason');
             $table->string('sickness');
-            $table->dateTime('date');
+            $table->date('date');
+            $table->time('hour');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')

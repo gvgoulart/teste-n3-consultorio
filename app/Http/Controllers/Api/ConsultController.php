@@ -22,13 +22,13 @@ class ConsultController extends Controller
                 $validator = Validator::make($data, [
                     'reason' => 'required|string|max:255',
                     'sickness' => 'required|string|max:255',
-                    'date' => 'required|date|max:255'
+                    'date' => 'required|date|max:255',
+                    'hour' => 'required'
                 ]);
 
                 if($validator->fails()){
                     return response(['error' => $validator->errors(), 'Erro de validação']);
                 }
-                $date = date('Y-m-d H-i-s', strtotime($request->date));
 
 
                 //cria a consulta
@@ -37,7 +37,8 @@ class ConsultController extends Controller
                     'pacient_id' => $id,
                     'reason' => $request->reason,
                     'sickness' => $request->sickness,
-                    'date' => $date
+                    'date' => $request->date,
+                    'hour' => $request->hour
                 ]);
 
                 return response([ 'consult' => $consult, 'message' => 'Consulta criada com sucesso'], 200);
@@ -72,7 +73,8 @@ class ConsultController extends Controller
             $validator = Validator::make($data, [
                 'reason' => 'required|string|max:255',
                 'sickness' => 'required|string|max:255',
-                'date' => 'required|date|max:255'
+                'date' => 'required|date|max:255',
+                'hour' => 'required'
             ]);
 
             if($validator->fails()){
@@ -82,11 +84,13 @@ class ConsultController extends Controller
             $reason = $request->reason;
             $sickness = $request->sickness;
             $date = $request->date;
+            $hour = $request->hour;
 
             Consult::find($id)->update([
                 'reason'=>$reason,
                 'sickness'=>$sickness,
-                'date'=>$date
+                'date'=>$date,
+                'hour'=>$hour
             ]);
             $consult = Consult::find($id);
 

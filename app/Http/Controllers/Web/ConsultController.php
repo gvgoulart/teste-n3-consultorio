@@ -42,7 +42,8 @@ class ConsultController extends Controller
             'pacient' => 'required',
             'reason' => 'required|string|max:255',
             'sickness' => 'required|string|max:255',
-            'date' => 'required|date|max:255'
+            'date' => 'required|date|max:255',
+            'hour' => 'required'
         ]);
 
         if($validator->fails()){
@@ -54,7 +55,8 @@ class ConsultController extends Controller
                 'pacient_id' => $request->pacient,
                 'reason' => $request->reason,
                 'sickness' => $request->sickness,
-                'date' => $request->date
+                'date' => $request->date,
+                'hour' => $request->hour
             ]);
             
             return redirect()->back()->with('msg', 'Consulta criada com sucesso!');
@@ -63,7 +65,7 @@ class ConsultController extends Controller
     }
     public function editForm($id) {
         $consult = Consult::findOrFail($id);
-        $date = DateTime::createFromFormat("Y-m-d H:i:s", "$consult->date")->format("d-m-Y");
+        $date = DateTime::createFromFormat("Y-m-d H:i:s", "$consult->date")->format("d/m/Y");
 
         $data['consult'] = $consult;
         $data['date'] = $date;
@@ -77,7 +79,8 @@ class ConsultController extends Controller
             $validator = Validator::make($data, [
                 'reason' => 'required|string|max:255',
                 'sickness' => 'required|string|max:255',
-                'date' => 'required|date|max:255'
+                'date' => 'required|date|max:255',
+                'hour' => 'required'
             ]);
 
             if($validator->fails()){
@@ -87,11 +90,13 @@ class ConsultController extends Controller
             $reason = $request->reason;
             $sickness = $request->sickness;
             $date = $request->date;
+            $hour = $request->hour;
 
             Consult::find($id)->update([
                 'reason'=>$reason,
                 'sickness'=>$sickness,
-                'date'=>$date
+                'date'=>$date,
+                'hour'=>$hour
             ]);
             $consult = Consult::find($id);
 

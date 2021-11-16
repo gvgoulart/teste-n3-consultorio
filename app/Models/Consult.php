@@ -14,7 +14,8 @@ class Consult extends Model
         'pacient_id',
         'reason',
         'sickness',
-        'date'
+        'date',
+        'hour'
     ];
 
     public function pacient() {
