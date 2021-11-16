@@ -12,6 +12,7 @@
             <h1 class="font-semibold text-xl text-gray-800 leading-tight">
                     Bem vindo ao consultórioApp!
             </h1>
+            <x-jet-section-border />
             <h3 class="text-lg font-medium text-gray-900">
                 Esta aplicação foi feita com Laravel, Jetstream, Passport e Laradock.
                 Os arquivos docker file e o JSON do insomnia para testes estão todos no <a href="https://github.com/gvgoulart/teste-n3-consultorio">git!</a>

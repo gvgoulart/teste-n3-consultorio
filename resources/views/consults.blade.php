@@ -47,8 +47,8 @@
                             href="{{ route('consult_edit_form', ['id' => $consult->id]) }}">Editar
                         </a>
                     </td>
-                    </tr>
-                @endforeach
+                    @endforeach
+                </tr>
                 </tbody>
 
                 <td>
