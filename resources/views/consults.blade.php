@@ -51,10 +51,9 @@
                 </tr>
                 </tbody>
 
-                <td>
-                    <a type="button" class="btn btn-success" href="{{ route('consult_create_form') }}">Agendar Consulta</a>
-                </td>
             </table>
+                <a type="button" class="btn btn-success" href="{{ route('consult_create_form') }}">Agendar Consulta</a>
+                <a type="button" class="btn btn-dark" href="{{ route('consults_all') }}">Visualizar Todas as consultas</a>
             </div>
             @if(session('msg'))
                 <div class="alert alert-success" role="alert">

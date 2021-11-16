@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Validator;
 
 class ConsultController extends Controller
 {
+    public function getAll() {
+        $consults = '';
+        $consults = Consult::all();
+
+        return view('consults', ['consults' => $consults]);
+    }
     public function delete($id) {
 
         if(User::find(Auth::user()->id)){

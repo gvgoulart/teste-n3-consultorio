@@ -39,6 +39,7 @@ Route::get('/consult/editForm/{id}', [ConsultController::class,'editForm'])->nam
 Route::get('/consult/edit/{id}', [ConsultController::class,'edit'])->name('consult_edit');
 Route::get('/consult/createForm', [ConsultController::class,'createForm'])->name('consult_create_form');
 Route::post('/consult/create', [ConsultController::class,'create'])->name('consult_create');
+Route::get('/consults/all', [ConsultController::class, 'getAll'])->name('consults_all');
 
 
 
