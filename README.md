@@ -1,6 +1,5 @@
 <h1>Tecnologias utilizadas</h1>
 <ul>
-    <li>PHP</li>
     <li>Laravel</li>
         <ol> 
             <li>Laravel Jetstream(Autenticação)</li>
