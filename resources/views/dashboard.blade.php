@@ -16,6 +16,13 @@
                 Esta aplicação foi feita com Laravel, Jetstream, Passport e Laradock.
                 Os arquivos docker file e o JSON do insomnia para testes estão todos no <a href="https://github.com/gvgoulart/teste-n3-consultorio">git!</a>
             </h3>
+            <h3 class="text-lg font-medium text-gray-900">
+                Caso queira utilizar a seeder, ela criará alguns usuários, consultas e também pacientes para testes.
+                "php artisan db:seed"
+            </h3>
+            <h3 class="text-lg font-medium text-gray-900">
+                Não esqueça de rodar "php artisan passport:install"
+            </h3>
         </div>
     </div>
 </x-app-layout>
