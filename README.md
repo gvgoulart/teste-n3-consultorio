@@ -80,5 +80,5 @@ PASSWORD MYSQL=root
 REDIS_HOST=redis
 QUEUE_HOST=beanstalkd
 ```
-
+Por padrão, coloquei a porta do laravel na 8888, mysql na 8081
 Vai ser necessário gerar keys e também criar o banco de dados no Mysql! Recomendo utilizar a porta do phpmyadmin
