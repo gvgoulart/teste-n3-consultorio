@@ -16,8 +16,9 @@ class ConsultController extends Controller
     public function getAll() {
         $consults = '';
         $consults = Consult::all();
+        $all = true;
 
-        return view('consults', ['consults' => $consults]);
+        return view('consult/all', ['consults' => $consults, 'all' => $all]);
     }
     public function delete($id) {
 
